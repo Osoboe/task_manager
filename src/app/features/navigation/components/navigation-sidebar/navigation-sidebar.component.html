@@ -1,0 +1,10 @@
+<li
+  *ngFor="let workGroup of workGroups$ | async"
+  (click)="changeCurrentWorkGroup(workGroup.id)"
+>
+  <div class="project-info">
+    <div class="content">
+      <p>{{ workGroup.title }}</p>
+    </div>
+  </div>
+</li>

@@ -1,0 +1,35 @@
+<nz-layout class="app-layout">
+  <nz-header>
+    <div class="rer">
+      <div class="burger"><p>Доска заявок на сервисное обслуживание</p></div>
+      <div class="admin">
+        <div class="admin__icon">фото</div>
+        <div>
+          <div>Имя фамилия</div>
+          <div>администратор</div>
+        </div>
+      </div>
+    </div>
+  </nz-header>
+  <div (click)="isSidebarCollapsed = !isSidebarCollapsed">Button</div>
+
+  <nz-layout>
+    <nz-sider
+      class="menu-sidebar"
+      nzCollapsible
+      nzWidth="256px"
+      nzTheme="light"
+      [nzCollapsedWidth]="0"
+      [(nzCollapsed)]="isSidebarCollapsed"
+      [nzTrigger]="null"
+    >
+      <app-navigation-sidebar
+        [workGroups$]="workGroups$"
+      ></app-navigation-sidebar>
+    </nz-sider>
+
+    <nz-content>
+      <router-outlet></router-outlet>
+    </nz-content>
+  </nz-layout>
+</nz-layout>

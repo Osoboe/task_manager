@@ -1,0 +1,8 @@
+<div class="board" cdkDropListGroup>
+  <div
+    class="column"
+    app-board-column
+    *ngFor="let status of tasksStatuses"
+    [status]="status"
+  ></div>
+</div>

@@ -1,0 +1,21 @@
+<div *ngIf="tasks$ | async as tasks" class="column">
+  <div class="column">
+    <h3 class="column-title">{{ status }}</h3>
+    <div cdkDropList>
+      <div
+        cdkDropList
+        [cdkDropListData]="tasks"
+        [id]="status"
+        (cdkDropListDropped)="drop($event)"
+        class="column-list"
+      >
+        <app-task-card
+          *ngFor="let task of tasks"
+          [task]="task"
+          cdkDrag
+          [cdkDragData]="task"
+        ></app-task-card>
+      </div>
+    </div>
+  </div>
+</div>
